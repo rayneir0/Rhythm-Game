@@ -1,0 +1,14 @@
+# Ignore the Library folder
+CardGame/Library/
+
+# Ignore the Logs folder
+CardGame/Logs/
+
+# Ignore the User Setting folder
+CardGame/UserSettings/
+
+# Ignore the Temp folder
+CardGame/Temp/
+
+# Ignore the VSCode
+.vs/
