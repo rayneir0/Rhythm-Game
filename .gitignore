@@ -1,14 +1,14 @@
 # Ignore the Library folder
-CardGame/Library/
+RhythmGame/Library/
 
 # Ignore the Logs folder
-CardGame/Logs/
+RhythmGame/Logs/
 
 # Ignore the User Setting folder
-CardGame/UserSettings/
+RhythmGame/UserSettings/
 
 # Ignore the Temp folder
-CardGame/Temp/
+RhythmGame/Temp/
 
 # Ignore the VSCode
 .vs/
