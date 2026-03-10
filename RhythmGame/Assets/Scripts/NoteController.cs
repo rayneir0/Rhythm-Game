@@ -1,35 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 public enum HitType
 {
     None,
-    Early,
     Perfect,
-    Late
+    Great,
+    Good,
+    Miss
 }
 public class NoteController : MonoBehaviour
 {
     // Update is called once per frame
-    public InputController inputController;
+   [HideInInspector]public InputController inputController;
     // public HitZone hitZone;
     public Transform hitLine;
+    public HitType currentHitType = HitType.None;
+    public CalculateScore score;
+    public TextMeshProUGUI feedbackText;
     private SpriteRenderer spriteRenderer;
-    
-    // private bool isInHitZone = false;
     public float moveSpeed = 3f;
     public float perfectWindow = 0.2f;
     public float goodWindow = 0.6f;
     public float badWindow = 0.8f;
-
+    public bool isHit = false;
     private bool isStopped = false;
-    private HitType currentHitType = HitType.None;
+    private Coroutine hideCoroutine;
+   
 
-
-    void Start()
+    void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-         spriteRenderer.color =  new Color(0, 0, 1); 
+       
+    }
+    void OnEnable()
+    {
+        isStopped = false;
+        spriteRenderer.color = Color.blue;
+        isHit = false;
+    }
+    void Start()
+    {
+        spriteRenderer.color =  new Color(0, 0, 1); // Blue
     }
 
     void Update()
@@ -39,43 +52,82 @@ public class NoteController : MonoBehaviour
             transform.position += Vector3.down * moveSpeed * Time.deltaTime;
         }
 
-        // Only allow hit if inside hit zone
-        if (inputController.getKeyDown() && !isStopped)
+        if (transform.position.y < hitLine.position.y - 2f && !isHit) // If the note hasn't been hit and it has been missed
         {
-            CheckHitStatus();
+            currentHitType = HitType.Miss;
+            HitNote(Color.gray, "Miss");  // reuse the same HitNote method
+            isHit = true; // mark this note as already processed
+        }
+        if(transform.position.y < hitLine.position.y - 6f)
+        {
+          
+            gameObject.SetActive(false);
         }
     }
     public void CheckHitStatus()
     {
-        float distance = Mathf.Abs(transform.position.y - hitLine.position.y);
+        if (isHit) return;
+        isHit = true;
+        if (hitLine == null)
+        {
+            Debug.LogWarning("HitLine not assigned for note!");
+            return;
+        }
+
+        float distance = Mathf.Abs(transform.position.y - hitLine.position.y); // Calculates the distance from hitline
 
         if (distance <= perfectWindow)
         {
             Debug.Log("PERFECT");
-            HitNote(Color.green);
+            currentHitType = HitType.Perfect;
+            HitNote(Color.green, "Perfect"); // Show colour and text feedback
+            
+
         }
         else if (distance <= goodWindow)
         {
-            Debug.Log("GOOD");
-            HitNote(Color.yellow);
+            Debug.Log("GREAT");
+            currentHitType = HitType.Great;
+            HitNote(Color.yellow, "Great");
         }
         else if (distance <= badWindow)
         {
-            Debug.Log("LATE / EARLY");
-            HitNote(Color.red);
+            Debug.Log("GOOD");
+            currentHitType = HitType.Good;
+            HitNote(Color.red, "Good");
         }
         else
         {
             Debug.Log("MISS");
+            currentHitType = HitType.Miss;
         }
+     
     }
  
-    void HitNote(Color hitColor)
+    void HitNote(Color hitColor, string feedback)
     {
         isStopped = true;
-        spriteRenderer.color =  hitColor; 
+        spriteRenderer.color =  hitColor; // Give the sprite the colour
+        score.AddScore(this); // Add the score based on Hit Type
+        if(feedbackText != null)
+        {
+            feedbackText.text = feedback; // Set the text
+            feedbackText.gameObject.SetActive(true);
+
+            // Hide after 0.3s
+            if(hideCoroutine != null)
+                StopCoroutine(hideCoroutine);
+            hideCoroutine = StartCoroutine(HideFeedback(0.3f));
+
+        }
 
         StartCoroutine(DisableNote());
+    }
+    private IEnumerator HideFeedback(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (feedbackText != null)
+            feedbackText.gameObject.SetActive(false);
     }
 
     IEnumerator DisableNote()
@@ -83,34 +135,7 @@ public class NoteController : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         gameObject.SetActive(false);
     }
-    // void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     if (other.CompareTag("Perfect"))
-    //     {
-    //         isInHitZone = true;
-    //         currentHitType = HitType.Perfect;
-    //     }
-    //     if (other.CompareTag("Early"))
-    //     {
-    //         isInHitZone = true;
-    //         currentHitType = HitType.Early;
-    //     }
-    //     if (other.CompareTag("Late"))
-    //     {
-    //         isInHitZone = true;
-    //         currentHitType = HitType.Late;
-    //         Debug.Log("InLateZone");
-    //     }
-    // }
-    
 
-    // void OnTriggerExit2D(Collider2D other)
-    // {
-    //     if (other.CompareTag("Perfect") || other.CompareTag("Early") || other.CompareTag("Late"))
-    //     {
-    //         isInHitZone = false;
-    //     }
-    // }
-
+  
 
 }

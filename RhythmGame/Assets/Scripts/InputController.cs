@@ -12,11 +12,12 @@ public class InputController : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.color = new Color(1, 1, 1, 0.25f); 
+        spriteRenderer.color = new Color(1, 1, 1, 0.25f);  // White
     }
 
     void Update()
-    {
+    {   
+        // Handles the middle key which has two inputs as well
         keyDown = Input.GetKeyDown(keyPressed) ||
                        (keyPressedSecondary != KeyCode.None && Input.GetKeyDown(keyPressedSecondary));
         
@@ -25,12 +26,12 @@ public class InputController : MonoBehaviour
         // For visual interaction
         if(keyDown)
         {
-            spriteRenderer.color = new Color(1, 1, 1, 1f);
+            spriteRenderer.color = new Color(1, 1, 1, 1f); // White
         }
 
         if(keyUp)
         {
-            spriteRenderer.color =  new Color(1, 1, 1, 0.25f); 
+            spriteRenderer.color =  new Color(1, 1, 1, 0.25f);  // Transparent White
         }
 
     }
