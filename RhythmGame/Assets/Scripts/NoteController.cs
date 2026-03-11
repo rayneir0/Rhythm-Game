@@ -37,12 +37,12 @@ public class NoteController : MonoBehaviour
     void OnEnable()
     {
         isStopped = false;
-        spriteRenderer.color = Color.blue;
+        spriteRenderer.color = Color.white;
         isHit = false;
     }
     void Start()
     {
-        spriteRenderer.color =  new Color(0, 0, 1); // Blue
+        spriteRenderer.color =  new Color(1, 1, 1); // white colour for the note
     }
 
     void Update()

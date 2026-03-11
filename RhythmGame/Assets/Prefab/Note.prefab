@@ -101,7 +101,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 501
+  m_VersionIndex: 507
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -220,7 +220,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyPressed: 113
   keyPressedSecondary: 0
-  moveSpeed: 5
 --- !u!54 &1915499470301302946
 Rigidbody:
   m_ObjectHideFlags: 0
