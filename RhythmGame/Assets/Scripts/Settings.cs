@@ -15,11 +15,6 @@ public class Settings : MonoBehaviour
     public Slider bgVolumeSlider;
     private float prevVolume = 1f;
 
-    void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
-
     void Start()
     {
         audioSource = songManager.audioSource;
