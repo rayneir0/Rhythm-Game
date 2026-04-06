@@ -7,6 +7,11 @@ public class CalculateScore : MonoBehaviour
 {
     public int totalScore;
     public int currentCombo;
+    // For testing
+    public int perfectHit;
+    public int greatHit;
+    public int goodHit;
+    public int badHit;
     public TextMeshProUGUI scoreText;
     public DialogueManager dialogueManager;
     public AmbienceManager ambienceManager;
@@ -17,18 +22,22 @@ public class CalculateScore : MonoBehaviour
             case HitType.Perfect:
                 totalScore  += 20;
                 currentCombo ++; // Adds to the combo
+                perfectHit ++;
                 break;
             case HitType.Great:
                 totalScore += 10;
                 currentCombo ++;
+                greatHit ++;
                 break;
             case HitType.Good:
                 totalScore += 5;
                 currentCombo ++;
+                goodHit ++;
                 break;
             case HitType.Miss:
                 totalScore += 0;
                 currentCombo = 0;  // Breaks the combo
+                badHit ++;
                 break;
         }
         
@@ -57,7 +66,12 @@ public class CalculateScore : MonoBehaviour
     {
         if(scoreText != null)
             scoreText.text = $"Score: {totalScore} | Combo: {currentCombo}";
-        
-   
+        Debug.Log("Total Score: " + totalScore);
+        Debug.Log("Total Combo: " +currentCombo);
+        Debug.Log("Perfect: " + perfectHit);
+        Debug.Log("Great: " + greatHit);
+        Debug.Log("Good" + goodHit);
+        Debug.Log("Miss" + badHit);
+    
     }
 }
