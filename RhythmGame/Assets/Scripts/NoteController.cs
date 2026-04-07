@@ -33,6 +33,7 @@ public class NoteController : MonoBehaviour
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sortingOrder = 1;
        
     }
     void OnEnable()
@@ -108,12 +109,16 @@ public class NoteController : MonoBehaviour
     void HitNote(Color hitColor, string feedback)
     {
         isStopped = true;
+        
         spriteRenderer.color =  hitColor; // Give the sprite the colour
         score.AddScore(this); // Add the score based on Hit Type
 
         if (feedback != "Miss")
         {
             ParticleSystem effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            var renderer = effect.GetComponent<ParticleSystemRenderer>();
+            renderer.sortingLayerName = spriteRenderer.sortingLayerName;
+            renderer.sortingOrder = spriteRenderer.sortingOrder + 1;
             effect.Play();
             Destroy(effect.gameObject, effect.main.duration + effect.main.startLifetime.constantMax);
         }
@@ -126,11 +131,11 @@ public class NoteController : MonoBehaviour
             // Hide after 0.3s
             if(hideCoroutine != null)
                 StopCoroutine(hideCoroutine);
-            hideCoroutine = StartCoroutine(HideFeedback(0.5f));
+            hideCoroutine = StartCoroutine(HideFeedback(0.3f));
 
         }
-
         StartCoroutine(DisableNote());
+
     }
     private IEnumerator HideFeedback(float delay)
     {
@@ -141,7 +146,7 @@ public class NoteController : MonoBehaviour
 
     IEnumerator DisableNote()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
         gameObject.SetActive(false);
     }
 
