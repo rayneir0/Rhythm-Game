@@ -122,16 +122,21 @@ public class NoteSpawner : MonoBehaviour
         return closest;
     }
     public void ResetNotes()
-{
-    foreach (GameObject note in notePool)
     {
-        note.SetActive(false);
-    }
-    beatTimer = 0f;
+        foreach (GameObject note in notePool)
+        {
+            note.SetActive(false);
+        }
+        beatTimer = 0f;
 
-    foreach (var lane in laneNotes.Keys)
-    {
-        laneNotes[lane].Clear();
+        foreach (var lane in laneNotes.Keys)
+        {
+            laneNotes[lane].Clear();
+        }
     }
-}
+
+    public void SetBPM(float value)
+    {
+        bpm = value;
+    }
 }
