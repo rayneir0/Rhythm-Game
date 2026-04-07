@@ -65,7 +65,7 @@ public class CalculateScore : MonoBehaviour
     public void UpdateScoreUI()
     {
         if(scoreText != null)
-            scoreText.text = $"Score: {totalScore} | Combo: {currentCombo}";
+            scoreText.text = $"Score: {totalScore} \n Combo: {currentCombo}";
         Debug.Log("Total Score: " + totalScore);
         Debug.Log("Total Combo: " +currentCombo);
         Debug.Log("Perfect: " + perfectHit);

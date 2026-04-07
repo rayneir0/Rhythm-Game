@@ -12,7 +12,7 @@ public class InputController : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.color = new Color(1, 1, 1, 0.25f);  // White
+        spriteRenderer.color = new Color(0, 0, 0, 0.25f);  // White
     }
 
     void Update()
@@ -26,12 +26,12 @@ public class InputController : MonoBehaviour
         // For visual interaction
         if(keyDown)
         {
-            spriteRenderer.color = new Color(1, 1, 1, 1f); // White
+            spriteRenderer.color = new Color(0, 0, 0, 0.45f); // White
         }
 
         if(keyUp)
         {
-            spriteRenderer.color =  new Color(1, 1, 1, 0.25f);  // Transparent White
+            spriteRenderer.color =  new Color(0, 0, 0, 0.25f);  // Transparent White
         }
  
     }
