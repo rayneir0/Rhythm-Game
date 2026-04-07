@@ -488,7 +488,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -31.844254, y: 232.18335}
-  m_SizeDelta: {x: 295.4159, y: 70.2444}
+  m_SizeDelta: {x: 400, y: 70.2444}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &152875378
 MonoBehaviour:
@@ -510,7 +510,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bard's Song
+  m_text: Rhythm Tavern
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d077a033bb266c44a931d372afd28294, type: 2}
   m_sharedMaterial: {fileID: -8785870752710025633, guid: d077a033bb266c44a931d372afd28294, type: 2}
