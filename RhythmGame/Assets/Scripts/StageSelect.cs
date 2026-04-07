@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StageSelect : MonoBehaviour
 {
     private static int stagesCompleted = 0;
     public GameObject stageGrid;
+    public SongManager songManager;
 
 
     // Start is called before the first frame update
@@ -44,4 +46,14 @@ public class StageSelect : MonoBehaviour
             stageGrid.transform.GetChild(i).gameObject.SetActive(true);
         }
     }
+
+    public void loadStage()
+    {
+        songManager.setIsMenu(false);
+        SceneManager.LoadScene("MainScene");
+    }
+
+ 
+
+
 }
