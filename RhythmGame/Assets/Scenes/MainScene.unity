@@ -798,6 +798,18 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.2509804
       objectReference: {fileID: 0}
+    - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7804198711356203416, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: keyPressed
       value: 117
@@ -1459,10 +1471,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score: 0 | Combo: 0'
+  m_text: 'Score: 0
+
+    Combo: 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d077a033bb266c44a931d372afd28294, type: 2}
+  m_sharedMaterial: {fileID: -8785870752710025633, guid: d077a033bb266c44a931d372afd28294, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1486,8 +1500,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2144,10 +2158,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Perfect
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d077a033bb266c44a931d372afd28294, type: 2}
+  m_sharedMaterial: {fileID: -8785870752710025633, guid: d077a033bb266c44a931d372afd28294, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2171,13 +2185,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 32
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2302,15 +2316,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7804198711356203416, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: keyPressed
@@ -3250,6 +3264,18 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.2509804
       objectReference: {fileID: 0}
+    - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7804198711356203416, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: keyPressed
       value: 105
@@ -3751,15 +3777,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7804198711356203416, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: keyPressed
@@ -4425,8 +4451,10 @@ MonoBehaviour:
   songManager: {fileID: 763226434}
   audioSource: {fileID: 1239288874}
   backgroundNoise: {fileID: 1197111409}
+  menuAudio: {fileID: 0}
   songVolumeSlider: {fileID: 1486011653}
   bgVolumeSlider: {fileID: 1569797107}
+  mainMenuVolumeSlider: {fileID: 0}
 --- !u!4 &1621418280
 Transform:
   m_ObjectHideFlags: 0
@@ -5371,15 +5399,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7804198711356203416, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: keyPressed
