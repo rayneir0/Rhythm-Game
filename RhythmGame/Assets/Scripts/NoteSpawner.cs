@@ -12,6 +12,7 @@ public class NoteSpawner : MonoBehaviour
     public Transform hitLine;
     public InputController[] laneInputs; 
     public Transform[] lanePositions;
+    public Transform noteContainer;
     
     public float bpm = 120f;
     private float beatTimer;
@@ -23,7 +24,7 @@ public class NoteSpawner : MonoBehaviour
     {
         for (int i = 0; i < poolSize; i++)
         {
-            NoteController note = Instantiate(notePrefab, spawnPoint.position, Quaternion.identity);
+            NoteController note = Instantiate(notePrefab, spawnPoint.position, Quaternion.identity, noteContainer);
             note.hitLine = hitLine; // Assign hit line at the start
             note.gameObject.SetActive(false);
             notePool.Add(note.gameObject); // Add ut to the pool
@@ -121,16 +122,21 @@ public class NoteSpawner : MonoBehaviour
         return closest;
     }
     public void ResetNotes()
-{
-    foreach (GameObject note in notePool)
     {
-        note.SetActive(false);
-    }
-    beatTimer = 0f;
+        foreach (GameObject note in notePool)
+        {
+            note.SetActive(false);
+        }
+        beatTimer = 0f;
 
-    foreach (var lane in laneNotes.Keys)
-    {
-        laneNotes[lane].Clear();
+        foreach (var lane in laneNotes.Keys)
+        {
+            laneNotes[lane].Clear();
+        }
     }
-}
+
+    public void SetBPM(float value)
+    {
+        bpm = value;
+    }
 }

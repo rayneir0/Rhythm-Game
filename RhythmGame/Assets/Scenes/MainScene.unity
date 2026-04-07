@@ -649,7 +649,8 @@ MonoBehaviour:
   - {fileID: 300230428}
   - {fileID: 1080481514}
   - {fileID: 399324660}
-  bpm: 80
+  noteContainer: {fileID: 1768891718}
+  bpm: 154
   poolSize: 20
 --- !u!4 &136831536
 Transform:
@@ -798,6 +799,18 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.2509804
       objectReference: {fileID: 0}
+    - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7804198711356203416, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: keyPressed
       value: 117
@@ -808,7 +821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8753257066057550242, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Name
-      value: Button 4
+      value: Button 4 (U)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1461,8 +1474,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score: 0 | Combo: 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d077a033bb266c44a931d372afd28294, type: 2}
+  m_sharedMaterial: {fileID: -8785870752710025633, guid: d077a033bb266c44a931d372afd28294, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2088,7 +2101,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1239288874}
   songs:
-  - {fileID: 8300000, guid: 95bd94388e4a27e4aaac66350857c5f8, type: 3}
+  - clip: {fileID: 8300000, guid: 93634e0b8af262e4ea290e44c74bc6e6, type: 3}
+    bpm: 75
+  - clip: {fileID: 8300000, guid: 95bd94388e4a27e4aaac66350857c5f8, type: 3}
+    bpm: 130
   currentSongIndex: 0
   noteSpawner: {fileID: 136831535}
 --- !u!4 &763226435
@@ -2144,10 +2160,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Perfect
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d077a033bb266c44a931d372afd28294, type: 2}
+  m_sharedMaterial: {fileID: -8785870752710025633, guid: d077a033bb266c44a931d372afd28294, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2302,15 +2318,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7804198711356203416, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: keyPressed
@@ -2322,7 +2338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8753257066057550242, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Name
-      value: Button 2
+      value: Button 2 (R)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3250,6 +3266,18 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.2509804
       objectReference: {fileID: 0}
+    - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7804198711356203416, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: keyPressed
       value: 105
@@ -3260,7 +3288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8753257066057550242, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Name
-      value: Button 5
+      value: Button 5 (I)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3751,15 +3779,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7804198711356203416, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: keyPressed
@@ -3771,7 +3799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8753257066057550242, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Name
-      value: Button 3
+      value: Button 3 (T or Y)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4425,8 +4453,10 @@ MonoBehaviour:
   songManager: {fileID: 763226434}
   audioSource: {fileID: 1239288874}
   backgroundNoise: {fileID: 1197111409}
+  menuAudio: {fileID: 0}
   songVolumeSlider: {fileID: 1486011653}
   bgVolumeSlider: {fileID: 1569797107}
+  mainMenuVolumeSlider: {fileID: 0}
 --- !u!4 &1621418280
 Transform:
   m_ObjectHideFlags: 0
@@ -4769,6 +4799,37 @@ Transform:
   - {fileID: 1600255738}
   - {fileID: 136831536}
   - {fileID: 1621418280}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1768891717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1768891718}
+  m_Layer: 0
+  m_Name: Note Container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1768891718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768891717}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 520.5, y: 243.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1781897135
@@ -5371,15 +5432,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5723682582544387693, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7804198711356203416, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: keyPressed
@@ -5387,7 +5448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8753257066057550242, guid: f1d3168f0f12dd84d88ec1b9f41c67c4, type: 3}
       propertyPath: m_Name
-      value: Button 1
+      value: Button 1 (E)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5402,6 +5463,7 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 7852295}
   - {fileID: 1068863447}
+  - {fileID: 1768891718}
   - {fileID: 1186527796}
   - {fileID: 1177335949}
   - {fileID: 278636772}

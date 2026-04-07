@@ -33,7 +33,7 @@ public class InputController : MonoBehaviour
         {
             spriteRenderer.color =  new Color(1, 1, 1, 0.25f);  // Transparent White
         }
-
+ 
     }
 
     public bool getKeyDown()
