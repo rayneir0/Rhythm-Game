@@ -11,12 +11,42 @@ public class Settings : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioSource backgroundNoise;
+    public AudioSource menuAudio;
     public Slider songVolumeSlider;
     public Slider bgVolumeSlider;
+    public Slider mainMenuVolumeSlider;
     private float prevVolume = 1f;
+    private static float crowdVolume = 1f;
+    private static float songVolume = 1f;
+    private static float menuVolume = 1f;
 
     void Start()
     {
+        songVolumeSlider.value = songVolume;
+        bgVolumeSlider.value = crowdVolume;
+        mainMenuVolumeSlider.value = menuVolume;
+
+        songVolumeSlider.onValueChanged.AddListener(SetSongVolume);
+        bgVolumeSlider.onValueChanged.AddListener(SetBGVolume);
+        mainMenuVolumeSlider.onValueChanged.AddListener(SetMenuVolume);
+        if (songManager != null)
+        {
+            audioSource = songManager.audioSource;
+            audioSource.volume = songVolume;
+        }
+
+        if (backgroundNoise != null)
+        {
+            backgroundNoise.volume = crowdVolume;
+        }
+
+        if (menuAudio != null)
+        {
+            menuAudio.volume = menuVolume;
+        }
+
+
+        /*
         audioSource = songManager.audioSource;
 
         songVolumeSlider.value = audioSource.volume;
@@ -24,7 +54,7 @@ public class Settings : MonoBehaviour
 
         songVolumeSlider.onValueChanged.AddListener(SetSongVolume);
         bgVolumeSlider.onValueChanged.AddListener(SetBGVolume);
-        
+        */
 
     }
     public void ShowPanel()
@@ -44,12 +74,31 @@ public class Settings : MonoBehaviour
 
     public void SetSongVolume(float newVolume)
     {
-        audioSource.volume = newVolume;
+        //audioSource.volume = newVolume;
+        if (audioSource != null)
+        {
+            audioSource.volume = newVolume;
+        }
+        songVolume = newVolume;
     }
 
     public void SetBGVolume(float newVolume)
     {
-        backgroundNoise.volume = newVolume;
+        //backgroundNoise.volume = newVolume;
+        if (backgroundNoise != null)
+        {
+            backgroundNoise.volume = newVolume;
+        }
+        crowdVolume = newVolume;
+    }
+
+    public void SetMenuVolume(float newVolume)
+    {
+        menuVolume = newVolume;
+        if (menuAudio != null)
+        {
+            menuAudio.volume = menuVolume;
+        }
     }
     public void ToggleMute(AudioSource audio)
     {
