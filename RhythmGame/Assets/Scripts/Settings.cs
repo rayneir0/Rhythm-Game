@@ -24,11 +24,15 @@ public class Settings : MonoBehaviour
     {
         songVolumeSlider.value = songVolume;
         bgVolumeSlider.value = crowdVolume;
-        mainMenuVolumeSlider.value = menuVolume;
+        if(mainMenuVolumeSlider != null)
+        {
+            mainMenuVolumeSlider.value = menuVolume;
+            mainMenuVolumeSlider.onValueChanged.AddListener(SetMenuVolume);
+        }
 
         songVolumeSlider.onValueChanged.AddListener(SetSongVolume);
         bgVolumeSlider.onValueChanged.AddListener(SetBGVolume);
-        mainMenuVolumeSlider.onValueChanged.AddListener(SetMenuVolume);
+        
         if (songManager != null)
         {
             audioSource = songManager.audioSource;
