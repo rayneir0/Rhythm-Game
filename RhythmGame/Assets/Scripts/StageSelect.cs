@@ -20,6 +20,7 @@ public class StageSelect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (stageGrid == null) return;
         if (stageGrid.activeSelf && Input.GetKeyDown("u"))
         {
             masterMode();
@@ -29,6 +30,7 @@ public class StageSelect : MonoBehaviour
 
     void masterMode()
     {
+        if (stageGrid == null) return;
         //Debug.Log(stageGrid.transform.childCount);
         for (int i = 0; i < stageGrid.transform.childCount; i++)
         {
@@ -38,6 +40,7 @@ public class StageSelect : MonoBehaviour
 
     public void showStages()
     {
+        if (stageGrid == null) return;
         if (stagesCompleted > 3)
         {
             stagesCompleted = 3;
@@ -50,6 +53,7 @@ public class StageSelect : MonoBehaviour
 
     public void loadStage(int number)
     {
+        if(Dialogue == null) return;
         songManager.setIsMenu(false);
         Dialogue.setStageNumber(number);
         SceneManager.LoadScene("Dialogue Scene");

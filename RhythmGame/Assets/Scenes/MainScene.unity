@@ -1299,6 +1299,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5942128782172733071, guid: c1dee219b450b2c40bd8c37cf9ac213a, type: 3}
   m_PrefabInstance: {fileID: 386571321}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &363709690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 363709691}
+  - component: {fileID: 363709692}
+  m_Layer: 0
+  m_Name: StageSelect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &363709691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363709690}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 133.394, y: 266.84506, z: 0.0006575121}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1762869672}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &363709692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363709690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55d37fd48cc2e5b4bac4abe7e44d203e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageGrid: {fileID: 0}
+  songManager: {fileID: 763226434}
+  Dialogue: {fileID: 0}
 --- !u!1 &377649573
 GameObject:
   m_ObjectHideFlags: 0
@@ -2102,13 +2149,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1239288874}
-  songs:
-  - clip: {fileID: 8300000, guid: 93634e0b8af262e4ea290e44c74bc6e6, type: 3}
-    bpm: 75
-  - clip: {fileID: 8300000, guid: 95bd94388e4a27e4aaac66350857c5f8, type: 3}
-    bpm: 130
-  currentSongIndex: 0
   noteSpawner: {fileID: 136831535}
+  stage1: {fileID: 0}
+  stage2: {fileID: 0}
+  stage3: {fileID: 0}
+  stage4: {fileID: 0}
+  calculateScore: {fileID: 1600255737}
 --- !u!4 &763226435
 Transform:
   m_ObjectHideFlags: 0
@@ -3109,8 +3155,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Play something for us Bard!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d077a033bb266c44a931d372afd28294, type: 2}
+  m_sharedMaterial: {fileID: -8785870752710025633, guid: d077a033bb266c44a931d372afd28294, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3134,8 +3180,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 38
+  m_fontSizeBase: 38
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4373,6 +4419,7 @@ MonoBehaviour:
   scoreText: {fileID: 424398218}
   dialogueManager: {fileID: 1641520293}
   ambienceManager: {fileID: 647771838}
+  stageSelect: {fileID: 363709692}
 --- !u!4 &1600255738
 Transform:
   m_ObjectHideFlags: 0
@@ -4801,6 +4848,7 @@ Transform:
   - {fileID: 1600255738}
   - {fileID: 136831536}
   - {fileID: 1621418280}
+  - {fileID: 363709691}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1768891717

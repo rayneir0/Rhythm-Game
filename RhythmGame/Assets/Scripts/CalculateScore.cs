@@ -15,6 +15,7 @@ public class CalculateScore : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public DialogueManager dialogueManager;
     public AmbienceManager ambienceManager;
+    public StageSelect stageSelect;
     public void AddScore(NoteController note)
     {
         switch (note.currentHitType)
@@ -74,4 +75,16 @@ public class CalculateScore : MonoBehaviour
         Debug.Log("Miss" + badHit);
     
     }
+
+    public void OnSongEnd()
+    {
+        Debug.Log("Song ended");
+        Debug.Log("Number of Missed Notes " + badHit);
+
+        if(badHit < 30)
+        {
+            stageSelect.stageComplete();
+        }
+    }
+
 }

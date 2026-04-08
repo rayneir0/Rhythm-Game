@@ -7,6 +7,8 @@ public class SongData
 {
     public AudioClip clip;
     public float bpm;
+    public float startTime = 0f;
+    public float endTime = 180f; // Cut off songs at 3 minutes
 }
 public class SongManager : MonoBehaviour
 {
@@ -19,6 +21,9 @@ public class SongManager : MonoBehaviour
     public AudioClip stage3;
     public AudioClip stage4;
     public static bool isMenu = true;
+    private bool songEnded = false;
+
+    public CalculateScore calculateScore;
 
     void Start()
     {
@@ -52,7 +57,9 @@ public class SongManager : MonoBehaviour
     {
         if (index < 0 || index >= songs.Count) return;
         Debug.Log("The playing song's index is " + index);
-
+        
+        SongData song = songs[index];
+        
         currentSongIndex = index;
         audioSource.Stop();
         audioSource.clip = songs[index].clip;
@@ -63,6 +70,11 @@ public class SongManager : MonoBehaviour
         {
             noteSpawner.SetBPM(songs[index].bpm);
             noteSpawner.ResetNotes();
+        }
+
+        if(song.endTime > song.startTime)
+        {
+            StartCoroutine(StopSongAtTime(song.endTime));
         }
     }
 
@@ -79,17 +91,23 @@ public class SongManager : MonoBehaviour
         isMenu = boo;
     }
 
-    // // Play next song in the list
-    // public void NextSong()
-    // {
-    //     int nextIndex = (currentSongIndex + 1) % songs.Count;
-    //     PlaySong(nextIndex);
-    // }
+    private IEnumerator StopSongAtTime(float endTime)
+    {
+        Debug.Log("Coroutine Started");
+        while(audioSource.time < endTime && audioSource.isPlaying)
+        {
+            yield return null;
+        }
 
-    // // Play previous song
-    // public void PreviousSong()
-    // {
-    //     int prevIndex = (currentSongIndex - 1 + songs.Count) % songs.Count;
-    //     PlaySong(prevIndex);
-    // }
+        if(!songEnded)
+        {
+            Debug.Log("Coroutine Ended");
+            songEnded = true;
+            audioSource.Stop();
+            calculateScore.OnSongEnd();
+        }
+    }
+    
+
+
 }
