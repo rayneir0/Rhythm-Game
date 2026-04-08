@@ -8,6 +8,7 @@ public class StageSelect : MonoBehaviour
     private static int stagesCompleted = 0;
     public GameObject stageGrid;
     public SongManager songManager;
+    public DialogueSystem Dialogue;
 
 
     // Start is called before the first frame update
@@ -47,10 +48,16 @@ public class StageSelect : MonoBehaviour
         }
     }
 
-    public void loadStage()
+    public void loadStage(int number)
     {
         songManager.setIsMenu(false);
-        SceneManager.LoadScene("MainScene");
+        Dialogue.setStageNumber(number);
+        SceneManager.LoadScene("Dialogue Scene");
+    }
+
+    public void stageComplete()
+    {
+        stagesCompleted++;
     }
 
  

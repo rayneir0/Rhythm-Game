@@ -11,34 +11,36 @@ public class SongData
 public class SongManager : MonoBehaviour
 {
     public AudioSource audioSource;      // AudioSource that plays the song
-    public static List<SongData> songs = new List<SongData>();        // List of songs to switch between
+    public static List<SongData> songs = new List<SongData>();// List of songs to switch between
     public static int currentSongIndex = 0;     // Tracks which song is playing
     public NoteSpawner noteSpawner;      // Reference to your NoteSpawner
     public AudioClip stage1;
     public AudioClip stage2;
-    //public AudioClip stage3;
-    //public AudioClip stage4;
+    public AudioClip stage3;
+    public AudioClip stage4;
     public static bool isMenu = true;
 
     void Start()
     {
         if (songs.Count == 0)
         {
-            SongData newSong = new SongData();
-            newSong.clip = stage1;
-            newSong.bpm = 75;
-            songs.Add(newSong);
-            newSong.clip = stage2;
-            newSong.bpm = 130;
-            songs.Add(newSong);
-            /*
-            newSong.clip = stage3;
-            newSong.bpm = 150;
-            songs.Add(newSong);
-            newSong.clip = stage4;
-            newSong.bpm = 150;
-            songs.Add(newSong);
-            */
+            SongData newSong1 = new SongData();
+            newSong1.clip = stage1;
+            newSong1.bpm = 75;
+            songs.Add(newSong1);
+            SongData newSong2 = new SongData();
+            newSong2.clip = stage2;
+            newSong2.bpm = 130;
+            songs.Add(newSong2);
+            SongData newSong3 = new SongData();
+            newSong3.clip = stage3;
+            newSong3.bpm = 150;
+            songs.Add(newSong3);
+            SongData newSong4 = new SongData();
+            newSong4.clip = stage4;
+            newSong4.bpm = 150;
+            songs.Add(newSong4);
+            
         }
         if (!isMenu)
         {
@@ -49,6 +51,7 @@ public class SongManager : MonoBehaviour
     public void PlaySong(int index)
     {
         if (index < 0 || index >= songs.Count) return;
+        Debug.Log("The playing song's index is " + index);
 
         currentSongIndex = index;
         audioSource.Stop();
@@ -67,10 +70,12 @@ public class SongManager : MonoBehaviour
     public void setSongIndex(int index)
     {
         currentSongIndex = index;
+        Debug.Log("Song Index Set to " + index);
     }
 
     public void setIsMenu(bool boo)
     {
+        Debug.Log("IsMenuSet");
         isMenu = boo;
     }
 

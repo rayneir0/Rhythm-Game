@@ -8,6 +8,8 @@ MonoImporter:
   - noteSpawner: {instanceID: 0}
   - stage1: {fileID: 8300000, guid: 93634e0b8af262e4ea290e44c74bc6e6, type: 3}
   - stage2: {fileID: 8300000, guid: 95bd94388e4a27e4aaac66350857c5f8, type: 3}
+  - stage3: {fileID: 8300000, guid: 8f3206ce219555a4a84763ad4edad79e, type: 3}
+  - stage4: {fileID: 8300000, guid: 1c5fa435aaa7f464aa1eed647a325cb9, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
