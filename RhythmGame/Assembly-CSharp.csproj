@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\AmbienceManager.cs" />
     <Compile Include="Assets\Scripts\MainMenuScript.cs" />
     <Compile Include="Assets\Scripts\CalculateScore.cs" />
+    <Compile Include="Assets\Scripts\LoadMainMenu.cs" />
     <Compile Include="Assets\Scripts\NoteSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
