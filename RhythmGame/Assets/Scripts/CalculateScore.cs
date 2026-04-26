@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CalculateScore : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class CalculateScore : MonoBehaviour
     public DialogueManager dialogueManager;
     public AmbienceManager ambienceManager;
     public StageSelect stageSelect;
+    public DialogueSystem dialogue;
     public void AddScore(NoteController note)
     {
         switch (note.currentHitType)
@@ -81,9 +83,18 @@ public class CalculateScore : MonoBehaviour
         Debug.Log("Song ended");
         Debug.Log("Number of Missed Notes " + badHit);
 
-        if(badHit < 30)
+        if(badHit < 30) // Player passed the stage
         {
-            stageSelect.stageComplete();
+            stageSelect.stageComplete(); // Tell stage that player completed this stage
+            dialogue.setCompletion(); // Tell dialogue that they passed the stage
+            dialogue.setEndTrue(); // Tell dialogue that its an end scene
+            SceneManager.LoadScene("Dialogue Scene"); // Load the dialogue scene with ending dialogue
+        }
+        else // Player sucks
+        {
+            // Player did not complete stage, and thus did not pass the stage.
+            dialogue.setEndTrue(); // They did finish the stage though, just not with a pass
+            SceneManager.LoadScene("Dialogue Scene"); // Time to get told off.
         }
     }
 

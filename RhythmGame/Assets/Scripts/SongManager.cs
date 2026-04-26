@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class SongData
@@ -27,6 +29,7 @@ public class SongManager : MonoBehaviour
 
     void Start()
     {
+        Debug.Log(SceneManager.GetActiveScene().name);
         if (songs.Count == 0)
         {
             SongData newSong1 = new SongData();
@@ -45,10 +48,11 @@ public class SongManager : MonoBehaviour
             newSong4.clip = stage4;
             newSong4.bpm = 150;
             songs.Add(newSong4);
-            
         }
+        isMenu = SceneManager.GetActiveScene().name == "Main Menu";
         if (!isMenu)
         {
+            Debug.Log("Playing song from song manager");
             PlaySong(currentSongIndex);
         }
     }

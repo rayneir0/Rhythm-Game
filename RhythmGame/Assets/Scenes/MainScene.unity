@@ -2338,6 +2338,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 708923441}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1621418279}
+        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
+        m_MethodName: pauseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &708923444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3308,6 +3332,30 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 708923441}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1621418279}
+        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
+        m_MethodName: resumeGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1055237618
 MonoBehaviour:
@@ -4785,6 +4833,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1621418279}
+        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
+        m_MethodName: resumeGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1349332834}
         m_TargetAssemblyTypeName: LoadMainMenu, Assembly-CSharp
         m_MethodName: loadMain
@@ -5213,6 +5273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1600255738}
   - component: {fileID: 1600255737}
+  - component: {fileID: 1600255739}
   m_Layer: 0
   m_Name: CalculateScore
   m_TagString: Untagged
@@ -5242,6 +5303,7 @@ MonoBehaviour:
   dialogueManager: {fileID: 1641520293}
   ambienceManager: {fileID: 647771838}
   stageSelect: {fileID: 363709692}
+  dialogue: {fileID: 1600255739}
 --- !u!4 &1600255738
 Transform:
   m_ObjectHideFlags: 0
@@ -5257,6 +5319,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1762869672}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1600255739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600255736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5107dcd64c513d24fbc12c1ad9a042f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue1: {fileID: 4900000, guid: fc4b62a47d08cdb4eb9d949bb4e7c944, type: 3}
+  dialogue2: {fileID: 4900000, guid: c7d6a02a46e68464c814a2fb9ec48053, type: 3}
+  dialogue3: {fileID: 4900000, guid: f65fe6bcea88abb4cb1e2a5106a9e45e, type: 3}
+  dialogue4: {fileID: 4900000, guid: cd7d3a75a88a1ca4aa0f8f22deeb8922, type: 3}
+  End1G: {fileID: 4900000, guid: 140e3f12445099f4bb66a4f35087e138, type: 3}
+  End1B: {fileID: 4900000, guid: 21496bac75667144dbcdaca993e6de40, type: 3}
+  textBox: {fileID: 0}
 --- !u!1 &1620253470
 GameObject:
   m_ObjectHideFlags: 0

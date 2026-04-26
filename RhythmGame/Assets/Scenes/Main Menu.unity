@@ -746,6 +746,8 @@ MonoBehaviour:
   dialogue2: {fileID: 4900000, guid: c7d6a02a46e68464c814a2fb9ec48053, type: 3}
   dialogue3: {fileID: 4900000, guid: f65fe6bcea88abb4cb1e2a5106a9e45e, type: 3}
   dialogue4: {fileID: 4900000, guid: cd7d3a75a88a1ca4aa0f8f22deeb8922, type: 3}
+  End1G: {fileID: 4900000, guid: 140e3f12445099f4bb66a4f35087e138, type: 3}
+  End1B: {fileID: 4900000, guid: 21496bac75667144dbcdaca993e6de40, type: 3}
   textBox: {fileID: 0}
 --- !u!1 &207093850
 GameObject:
