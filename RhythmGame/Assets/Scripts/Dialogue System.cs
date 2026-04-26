@@ -102,11 +102,11 @@ public class DialogueSystem : MonoBehaviour
                 {
                     if (passStatus)
                     {
-                        textBox.text = endText[0][0];
+                        textBox.text = endText[0][counter];
                     } 
                     else
                     {
-                        textBox.text = endText[1][0];
+                        textBox.text = endText[1][counter];
                     }
                 }
                 else

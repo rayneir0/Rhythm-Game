@@ -120,7 +120,7 @@ public class Settings : MonoBehaviour
 
     public void pauseGame()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0.00001f;
     }
 
     public void resumeGame()
